@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HeroDirectionReader : MonoBehaviour
 {
-    [SerializeField] private float horizontalDirection;
-    [SerializeField] private float verticalDirection;
+
+    [SerializeField] private Vector2 direction;
     [SerializeField] private float speed = 10;
 
     private SpriteRenderer spriteRenderer;
@@ -19,43 +19,44 @@ public class HeroDirectionReader : MonoBehaviour
     private void Update()
     {
         SetDirection();
-        Move();
     }
 
     private void FixedUpdate()
     {
+        Move();
         Flip();
         AnimationControl();
     }
 
     public void SetDirection()
     {
-       horizontalDirection = Input.GetAxis("Horizontal");
-       verticalDirection = Input.GetAxis("Vertical");
+       direction = new Vector2 (Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
     public void Move()
     {
-        if(horizontalDirection != 0 || verticalDirection != 0)
+        if(direction.x != 0 || direction.y != 0)
         {
-            var deltaX = horizontalDirection * speed * Time.deltaTime;
-            var deltaY = verticalDirection * speed * Time.deltaTime;
+            var deltaX = direction.x * speed * Time.deltaTime;
+            var deltaY = direction.y * speed * Time.deltaTime;
+
             var newXPosition = transform.position.x + deltaX;
             var newYPosition = transform.position.y + deltaY;
+
             transform.position = new Vector3(newXPosition, newYPosition, transform.position.z);
         }
     }
 
     public void AnimationControl()
     {
-        animator.SetBool("is-runningRight", horizontalDirection != 0);
-        animator.SetBool("is-runningUp", verticalDirection > 0);
-        animator.SetBool("is-runningDown", verticalDirection < 0);
+        animator.SetBool("is-runningRight", direction.x != 0);
+        animator.SetBool("is-runningUp", direction.y > 0);
+        animator.SetBool("is-runningDown", direction.y < 0);
     }
 
     private void Flip()
     {
-        if (horizontalDirection < 0)
+        if (direction.x < 0)
             spriteRenderer.flipX = true;
         else
             spriteRenderer.flipX = false;

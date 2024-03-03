@@ -10,8 +10,6 @@ public class HandsMoving : MonoBehaviour
     [SerializeField] Rigidbody2D heroRB;
     [SerializeField] HeroBase heroBase;
 
-    // Update is called once per frame
-
     void Update()
     {
         Move();
