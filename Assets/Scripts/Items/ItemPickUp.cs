@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
@@ -8,7 +10,7 @@ public class ItemPickUp : MonoBehaviour
 
     private void PickUp()
     {
-        InventoryHandler.Instance.Add(_currentItem);
+        InventoryHandler.Instance.AddItem(_currentItem);
         Destroy(gameObject);
     }
 

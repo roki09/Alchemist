@@ -5,7 +5,7 @@ using UnityEngine;
 public class HeroDirectionReader : MonoBehaviour
 {
 
-    [SerializeField] private Vector2 direction;
+    [SerializeField] public Vector3 direction;
     [SerializeField] private float speed = 10;
 
     private SpriteRenderer spriteRenderer;

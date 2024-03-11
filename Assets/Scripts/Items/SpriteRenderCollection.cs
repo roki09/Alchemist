@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class SpriteRenderCollection : MonoBehaviour
 {
-
-    [SerializeField] public Sprite[] spriteOfSmolPoution;
-
-    [SerializeField] public Sprite[] spriteOfMediumPoution;
-
-    [SerializeField] public Sprite[] spritesOfBigPoution;
+    [SerializeField] public Sprite[] sprites;
 
     [SerializeField] public Sprite[] spritesOfRarytiBackground;
+
+    [SerializeField] public Sprite[] spritesOfWeaponForInventory;
+
+    [SerializeField] public Sprite[] spritesOfWeapon;
+
+    [SerializeField] public GameObject[] weaponsPrefab;
 
 
 

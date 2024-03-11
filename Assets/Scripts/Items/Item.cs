@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 [Serializable]
 public class Item
 {
@@ -22,7 +23,7 @@ public class Item
     public Item(int index, string name, int raryti, int cost)
     {
         _index = index;
-        _name = name;
+        _name = LibraryItemsNaims.ItemsName[index];
         _rarity = raryti;
         if (raryti == 0)
             _cost = cost * 1;
@@ -33,8 +34,8 @@ public class Item
 
     public virtual string ShowStats()
     {
-        return $"Name: {_name}\n" +
-            $"Rarity: {_rarity}\n" +
+        return $"Name: {LibraryItemsNaims.ItemsName[_index]}\n" +
+            $"Rarity: {LibraryItemsNaims.RarytiName[_rarity]}\n" +
             $"Cost: {_cost}";
     }
 

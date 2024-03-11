@@ -10,21 +10,33 @@ public class InventoryHandler : MonoBehaviour
 
     [SerializeField] SpriteRenderCollection spriteCollection;
     [SerializeField] List<Item> items = new List<Item>();
+    [SerializeField] List<Weapon> weapons = new List<Weapon>();
 
     public Transform ItemContent;
     public Image InventoryItem;
+    public Image WeaponItem;
 
     private void Awake()
     {
-            Instance = this;
+        Instance = this;
     }
 
-    public void Add(Item item)
+    public void AddItem(Item item)
     {
         items.Add(item);
     }
 
-    public void Remove(Item item)
+    public void AddWeapon(Weapon weapon)
+    {
+        weapons.Add(weapon);
+    }
+
+    public void RemoveWeapon(Weapon weapon)
+    {
+        weapons.Remove(weapon);
+    }
+
+    public void RemoveItem(Item item)
     {
         items.Remove(item);
     }
@@ -39,12 +51,30 @@ public class InventoryHandler : MonoBehaviour
         foreach (var item in items)
         {
             Image obj = Instantiate(InventoryItem, ItemContent);
+
+            var currentItem = obj.GetComponent<ItemShowStats>();
+            currentItem.currentItem = item;
+
             var rarytiSprite = obj.GetComponent<Image>();
             var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
 
             rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
-            itemIcon.sprite = spriteCollection.spritesOfBigPoution[item._index];
+            itemIcon.sprite = spriteCollection.sprites[item._index];
 
+        }
+
+        foreach (var item in weapons)
+        {
+            Image obj = Instantiate(WeaponItem, ItemContent);
+
+            var currentItem = obj.GetComponent<WeaponImageInteract>();
+            currentItem.currentItem = item;
+
+            var rarytiSprite = obj.GetComponent<Image>();
+            var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
+
+            rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
+            itemIcon.sprite = spriteCollection.spritesOfWeaponForInventory[item._index];
         }
     }
 }

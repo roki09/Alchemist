@@ -36,7 +36,7 @@ public class CreateItemForShop : MonoBehaviour
 
             Item currentItem = new Item(
                 index,
-                LibraryItemsNaims.BigPotName[index],
+                LibraryItemsNaims.ItemsName[index],
                 UnityEngine.Random.Range(0, 4),
                 UnityEngine.Random.Range(100, 300));
 
@@ -55,7 +55,7 @@ public class CreateItemForShop : MonoBehaviour
 
             itemInImage.currentItem = item; 
             rarytiItem.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
-            spriteItem.sprite = spriteCollection.spritesOfBigPoution[item._index];
+            spriteItem.sprite = spriteCollection.sprites[item._index];
 
         }
     }
