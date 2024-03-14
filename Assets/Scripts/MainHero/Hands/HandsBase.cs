@@ -6,4 +6,5 @@ public class HandsBase : MonoBehaviour
 {
     public Weapon equippedItem;
     public SpriteRenderer sprite;
+
 }

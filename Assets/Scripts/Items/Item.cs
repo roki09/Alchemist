@@ -10,11 +10,7 @@ using UnityEngine.UI;
 [Serializable]
 public class Item
 {
-    private void Start()
-    {
-        Debug.Log("start");
 
-    }
     public int _index;
     public string _name;
     public int _rarity;

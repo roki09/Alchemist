@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Weapon
   - Enemis
+  - Ground
+  - Cheast
   layers:
   - Default
   - TransparentFX
@@ -40,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: TilePalette
+    uniqueID: 1094106677
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -10,7 +10,7 @@ public class InventoryHandler : MonoBehaviour
 
     [SerializeField] SpriteRenderCollection spriteCollection;
     [SerializeField] List<Item> items = new List<Item>();
-    [SerializeField] List<Weapon> weapons = new List<Weapon>();
+    //[SerializeField] List<Weapon> weapons = new List<Weapon>();
 
     public Transform ItemContent;
     public Image InventoryItem;
@@ -26,15 +26,15 @@ public class InventoryHandler : MonoBehaviour
         items.Add(item);
     }
 
-    public void AddWeapon(Weapon weapon)
-    {
-        weapons.Add(weapon);
-    }
+    //public void AddWeapon(Weapon weapon)
+    //{
+    //    weapons.Add(weapon);
+    //}
 
-    public void RemoveWeapon(Weapon weapon)
-    {
-        weapons.Remove(weapon);
-    }
+    //public void RemoveWeapon(Weapon weapon)
+    //{
+    //    weapons.Remove(weapon);
+    //}
 
     public void RemoveItem(Item item)
     {
@@ -50,31 +50,48 @@ public class InventoryHandler : MonoBehaviour
 
         foreach (var item in items)
         {
-            Image obj = Instantiate(InventoryItem, ItemContent);
+            if (item is Weapon)
+            {
+                Image obj = Instantiate(WeaponItem, ItemContent);
 
-            var currentItem = obj.GetComponent<ItemShowStats>();
-            currentItem.currentItem = item;
+                var currentItem = obj.GetComponent<WeaponImageInteract>();
+                currentItem.currentItem = (Weapon)item;
 
-            var rarytiSprite = obj.GetComponent<Image>();
-            var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
+                var rarytiSprite = obj.GetComponent<Image>();
+                var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
 
-            rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
-            itemIcon.sprite = spriteCollection.sprites[item._index];
+                rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
+                itemIcon.sprite = spriteCollection.spritesOfWeaponForInventory[item._index];
+            }
+            else
+            {
+
+                Image obj = Instantiate(InventoryItem, ItemContent);
+
+                var currentItem = obj.GetComponent<ItemShowStats>();
+                currentItem.currentItem = item;
+
+                var rarytiSprite = obj.GetComponent<Image>();
+                var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
+
+                rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
+                itemIcon.sprite = spriteCollection.sprites[item._index];
+            }
 
         }
 
-        foreach (var item in weapons)
-        {
-            Image obj = Instantiate(WeaponItem, ItemContent);
+        //foreach (var item in weapons)
+        //{
+        //    Image obj = Instantiate(WeaponItem, ItemContent);
 
-            var currentItem = obj.GetComponent<WeaponImageInteract>();
-            currentItem.currentItem = item;
+        //    var currentItem = obj.GetComponent<WeaponImageInteract>();
+        //    currentItem.currentItem = item;
 
-            var rarytiSprite = obj.GetComponent<Image>();
-            var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
+        //    var rarytiSprite = obj.GetComponent<Image>();
+        //    var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
 
-            rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
-            itemIcon.sprite = spriteCollection.spritesOfWeaponForInventory[item._index];
-        }
+        //    rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
+        //    itemIcon.sprite = spriteCollection.spritesOfWeaponForInventory[item._index];
+        //}
     }
 }

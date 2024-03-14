@@ -10,7 +10,11 @@ public class Weapon : Item
 
     public Weapon(int index, string name, int raryti, int cost, int damage) : base(index, name, raryti, cost)
     {
-        _damage = damage;
+        if (raryti != 0)
+            _damage = damage * (1 + (raryti % 10));
+        else
+            _damage = damage;
+
         _index = index;
         _name = LibraryItemsNaims.WeaponsName[index];
         _rarity = raryti;

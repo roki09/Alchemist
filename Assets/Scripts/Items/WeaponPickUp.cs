@@ -8,7 +8,7 @@ public class WeaponPickUp : MonoBehaviour
 
     private void PickUp()
     {
-        InventoryHandler.Instance.AddWeapon(_currentItem);
+        InventoryHandler.Instance.AddItem(_currentItem);
         Destroy(gameObject);
     }
 

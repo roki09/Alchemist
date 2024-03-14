@@ -10,10 +10,10 @@ public class SlimeBase : MonoBehaviour
     [SerializeField] protected float speed = 1;
     [SerializeField] private float time = 0;
     [SerializeField] private EnemisBase enemis;
+    [SerializeField] private State state;
 
 
     public bool _heroIsNear;
-    [SerializeField] private State state;
     private bool isMoving = false;
     private Collider2D currentCollider;
 
