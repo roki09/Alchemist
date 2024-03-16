@@ -99,7 +99,7 @@ public class BlueSlimaBase : MonoBehaviour
     }
     private void SlimeMove()
     {
-        transform.Translate((transform.position - _heroPosition.transform.position).normalized * _speed * Time.deltaTime);
+        transform.Translate((_heroPosition.transform.position - transform.position).normalized * _speed * Time.deltaTime);
     }
 
     private void ThrowProjectaile()
@@ -108,7 +108,6 @@ public class BlueSlimaBase : MonoBehaviour
         {
             if (!item.isActiveAndEnabled)
                 StartCoroutine(Respawn(item));
-
         }
     }
 
