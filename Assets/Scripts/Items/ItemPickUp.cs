@@ -8,6 +8,11 @@ public class ItemPickUp : MonoBehaviour
 {
     [SerializeField] private Item _currentItem;
 
+
+    public Item GetItem()
+    {
+        return _currentItem;
+    }
     private void PickUp()
     {
         InventoryHandler.Instance.AddItem(_currentItem);

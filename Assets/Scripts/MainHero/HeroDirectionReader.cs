@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroDirectionReader : MonoBehaviour
+public class HeroDirectionReader : MonoBehaviour, IMovable
 {
 
     [SerializeField] public Vector3 direction;

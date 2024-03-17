@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueSlimaBase : MonoBehaviour
+public class BlueSlimeBase : MonoBehaviour, IMovable
 {
 
     [SerializeField] private HeroDirectionReader _heroPosition;
@@ -66,9 +66,9 @@ public class BlueSlimaBase : MonoBehaviour
                     _state = State.TakeDamage;
                 }
 
-                ThrowProjectaile();
+                RespawnProjectaile();
                 AnimationCotrol();
-                SlimeMove();
+                Move();
                 break;
 
             case State.TakeDamage:
@@ -97,17 +97,15 @@ public class BlueSlimaBase : MonoBehaviour
         _state = State.Idle;
         currentCollider.enabled = true;
     }
-    private void SlimeMove()
-    {
-        transform.Translate((_heroPosition.transform.position - transform.position).normalized * _speed * Time.deltaTime);
-    }
 
-    private void ThrowProjectaile()
+    private void RespawnProjectaile()
     {
         foreach (var item in _projectaile)
         {
             if (!item.isActiveAndEnabled)
                 StartCoroutine(Respawn(item));
+            else if (item.isActiveAndEnabled && item.flies == false)
+                item.Throw();
         }
     }
 
@@ -116,5 +114,10 @@ public class BlueSlimaBase : MonoBehaviour
         yield return new WaitForSeconds(3);
         obj.transform.position = transform.position;
         obj.gameObject.SetActive(true);
+    }
+
+    public void Move()
+    {
+        transform.Translate((_heroPosition.transform.position - transform.position).normalized * _speed * Time.deltaTime);
     }
 }

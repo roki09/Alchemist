@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class SlimeBase : MonoBehaviour
+public class SlimeBase : MonoBehaviour, IMovable
 {
     [SerializeField] private HeroDirectionReader _heroPosition;
     [SerializeField] protected float speed = 1;
@@ -66,7 +66,7 @@ public class SlimeBase : MonoBehaviour
                 }
 
                 AnimationCotrol();
-                SlimeMove();
+                Move();
                 break;
 
             case State.TakeDamage:
@@ -95,11 +95,8 @@ public class SlimeBase : MonoBehaviour
         state = State.Idle;
         currentCollider.enabled = true;
     }
-    private void SlimeMove()
+    public void Move()
     {
         transform.Translate((transform.position - _heroPosition.transform.position).normalized * speed * Time.deltaTime);
     }
-
-
-
 }
