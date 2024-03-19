@@ -25,11 +25,11 @@ public class ItemImageForChest : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerDown(PointerEventData eventData)
     {
         InventoryHandler.Instance.AddItem(_currentItem);
-        foreach (var item in _hero.ChestLogic._items)
+        foreach (var item in _hero.chestLogic._items)
         {
             if (_currentItem == item)
             {
-                _hero.ChestLogic._items.Remove(item);
+                _hero.chestLogic._items.Remove(item);
                 break;
             }
         }

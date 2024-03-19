@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -8,16 +9,16 @@ using static UnityEditor.Progress;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
-public class ChestLogic : MonoBehaviour
+public class ChestLogic : MonoBehaviour, IInteractable
 {
     public List<Item> _items = new List<Item>();
-
-
     [SerializeField] private SpriteRenderCollection _spriteCollection;
 
     [SerializeField] private Transform _scrollView;
     [SerializeField] private Transform _itemContent;
     [SerializeField] private Image _imageForPickUp;
+
+    private bool _isOpen = false;
 
 
     private void Start()
@@ -25,33 +26,18 @@ public class ChestLogic : MonoBehaviour
         CreateItems();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Stay");
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            _scrollView.gameObject.SetActive(true);
-            SetupCardForCheast();
-        }
-
-    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Exit");
-            _scrollView.gameObject.SetActive(false);
+            if (_isOpen == true)
+            {
+                Close();
+                _isOpen = false;
+            }
         }
-
     }
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //}
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //}
 
     private void CreateItems()
     {
@@ -97,5 +83,24 @@ public class ChestLogic : MonoBehaviour
             else
                 itemIcon.sprite = _spriteCollection.sprites[item._index];
         }
+    }
+
+    public void Interact(HeroBase hero)
+    {
+        if (_items != null)
+        {
+            Open();
+        }
+    }
+
+    private void Open()
+    {
+        _isOpen = true;
+        _scrollView.gameObject.SetActive(true);
+        SetupCardForCheast();
+    }
+    private void Close()
+    {
+        _scrollView.gameObject.SetActive(false);
     }
 }

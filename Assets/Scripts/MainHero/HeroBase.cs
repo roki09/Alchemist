@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class HeroBase : MonoBehaviour
 {
-    public ChestLogic ChestLogic;
+    public ChestLogic chestLogic;
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] public int _currentHealth = 100;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Cheast"))
+        if (collision.TryGetComponent(out IInteractable interactble))
         {
-            Debug.Log("Enter Chest");
-            ChestLogic = collision.gameObject.GetComponent<ChestLogic>();
+            chestLogic = interactble as ChestLogic;
+            interactble.Interact(this);
         }
     }
 
@@ -22,7 +22,7 @@ public class HeroBase : MonoBehaviour
         if (collision.gameObject.CompareTag("Cheast"))
         {
             Debug.Log("Exit Chest");
-            ChestLogic = null;
+            chestLogic = null;
         }
     }
 }
