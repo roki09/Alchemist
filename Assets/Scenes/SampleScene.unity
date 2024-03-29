@@ -457,13 +457,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 1557122339}
   - {fileID: 230009312}
-  _heroIsNear: 0
 --- !u!114 &44477005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,13 +991,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 31253839}
   - {fileID: 593005275}
-  _heroIsNear: 0
 --- !u!114 &58929192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3620,10 +3618,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
-  speed: 1
-  time: 0
-  enemis: {fileID: 0}
-  state: 0
+  _speed: 1
+  _enemis: {fileID: 0}
+  _state: 0
   _heroIsNear: 0
 --- !u!95 &519993554
 Animator:
@@ -4231,10 +4228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
-  speed: 1
-  time: 0
-  enemis: {fileID: 0}
-  state: 0
+  _speed: 1
+  _enemis: {fileID: 0}
+  _state: 0
   _heroIsNear: 0
 --- !u!95 &563043092
 Animator:
@@ -5466,10 +5462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
-  speed: 1
-  time: 0
-  enemis: {fileID: 0}
-  state: 0
+  _speed: 1
+  _enemis: {fileID: 0}
+  _state: 0
   _heroIsNear: 0
 --- !u!95 &721861867
 Animator:
@@ -6141,13 +6136,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 801641070}
   - {fileID: 1230530718}
-  _heroIsNear: 0
 --- !u!114 &774973919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22834,13 +22828,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 1216768969}
   - {fileID: 875183306}
-  _heroIsNear: 0
 --- !u!114 &929715450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24213,13 +24206,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 737238150}
   - {fileID: 53460978}
-  _heroIsNear: 0
 --- !u!114 &1121173615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26877,13 +26869,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 1279222943}
   - {fileID: 924615071}
-  _heroIsNear: 0
 --- !u!114 &1379218281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27121,10 +27112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
-  speed: 1
-  time: 0
-  enemis: {fileID: 0}
-  state: 0
+  _speed: 1
+  _enemis: {fileID: 0}
+  _state: 0
   _heroIsNear: 0
 --- !u!95 &1379578391
 Animator:
@@ -108945,10 +108935,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
-  speed: 1
-  time: 0
-  enemis: {fileID: 0}
-  state: 0
+  _speed: 1
+  _enemis: {fileID: 0}
+  _state: 0
   _heroIsNear: 0
 --- !u!95 &1563138555
 Animator:
@@ -110066,9 +110055,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 706705046}
   - {fileID: 1009153886}
@@ -110078,7 +110067,6 @@ MonoBehaviour:
   - {fileID: 558887192}
   - {fileID: 1527163908}
   - {fileID: 1288358125}
-  _heroIsNear: 0
 --- !u!114 &1811649643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111460,13 +111448,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 1024997654}
   - {fileID: 1097356672}
-  _heroIsNear: 0
 --- !u!114 &1930773128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111766,10 +111753,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
-  speed: 1
-  time: 0
-  enemis: {fileID: 0}
-  state: 0
+  _speed: 1
+  _enemis: {fileID: 0}
+  _state: 0
   _heroIsNear: 0
 --- !u!95 &1935200054
 Animator:
@@ -112006,13 +111992,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
   _speed: 1
-  _time: 0
   _enemis: {fileID: 0}
   _state: 0
+  _heroIsNear: 0
   _projectaile:
   - {fileID: 269320256}
   - {fileID: 2142879456}
-  _heroIsNear: 0
 --- !u!114 &1974418555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112894,10 +112879,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPosition: {fileID: 1334802110}
-  speed: 1
-  time: 0
-  enemis: {fileID: 0}
-  state: 0
+  _speed: 1
+  _enemis: {fileID: 0}
+  _state: 0
   _heroIsNear: 0
 --- !u!95 &2073512950
 Animator:

@@ -15,7 +15,7 @@ public class WeaponTrigger : MonoBehaviour
         Debug.Log("Enter");
         if (collision.gameObject.CompareTag("Enemis"))
         {
-            collision.gameObject.TryGetComponent<EnemisBase>(out var enemis);
+            collision.gameObject.TryGetComponent<Enemis>(out var enemis);
             Debug.Log("GetDamage");
 
             if (enemis._currentHealth > 0)

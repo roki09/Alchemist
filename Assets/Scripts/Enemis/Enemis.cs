@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemisBase : MonoBehaviour
+public class Enemis : MonoBehaviour
 {
     private SpriteRenderer sprite;
     private ItemDrop drop;
@@ -23,8 +23,9 @@ public class EnemisBase : MonoBehaviour
     {
         if (_currentHealth <= 0)
         {
-            sprite.DOFade(0, 1).OnComplete(() => AfterDeadAnimation());
-            //gameObject.SetActive(false);
+            sprite.DOFade(0, 1).
+                SetLink(gameObject).
+                OnComplete(() => AfterDeadAnimation());
         }
     }
 

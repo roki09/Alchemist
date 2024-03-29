@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IInteractable 
 {
-    public void Interact(HeroBase hero);
+    public void Interact(MainHero hero);
    
 }

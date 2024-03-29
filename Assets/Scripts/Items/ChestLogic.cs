@@ -85,7 +85,7 @@ public class ChestLogic : MonoBehaviour, IInteractable
         }
     }
 
-    public void Interact(HeroBase hero)
+    public void Interact(MainHero hero)
     {
         if (_items != null)
         {

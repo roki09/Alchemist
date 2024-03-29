@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barell : MonoBehaviour
+public class Barrel : MonoBehaviour
 {
     private State state;
     private Animator animator;
-    private EnemisBase enemis;
+    private Enemis enemis;
     public enum State
     {
         Idle,
@@ -17,7 +17,7 @@ public class Barell : MonoBehaviour
 
     private void Awake()
     {
-        enemis = GetComponent<EnemisBase>();
+        enemis = GetComponent<Enemis>();
         state = State.Idle;
         animator = GetComponent<Animator>();
     }

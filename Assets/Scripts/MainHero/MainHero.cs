@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroBase : MonoBehaviour
+public class MainHero : MonoBehaviour
 {
     public ChestLogic chestLogic;
     [SerializeField] private int _maxHealth = 100;

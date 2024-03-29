@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class ItemImageForChest : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [SerializeField] private TextMeshProUGUI _statsText;
-    [SerializeField] private HeroBase _hero;
+    [SerializeField] private MainHero _hero;
 
     public Item _currentItem;
 

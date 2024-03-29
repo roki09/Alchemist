@@ -9,7 +9,7 @@ public class WeaponImageInteract : MonoBehaviour, IPointerEnterHandler, IPointer
 {
     [SerializeField] private SpriteRenderCollection spriteCollection;
     [SerializeField] private TextMeshProUGUI statsText;
-    [SerializeField] private HeroBase heroBase;
+    [SerializeField] private MainHero heroBase;
 
     public Weapon currentItem;
 

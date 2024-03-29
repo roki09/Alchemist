@@ -6,16 +6,15 @@ using UnityEngine;
 
 public class SlimeBase : MonoBehaviour, IMovable
 {
-    [SerializeField] private HeroDirectionReader _heroPosition;
-    [SerializeField] protected float speed = 1;
-    [SerializeField] private float time = 0;
-    [SerializeField] private EnemisBase enemis;
-    [SerializeField] private State state;
+    [SerializeField] protected HeroDirectionReader _heroPosition;
+    [SerializeField] protected float _speed = 1;
+    [SerializeField] protected Enemis _enemis;
+    [SerializeField] protected State _state;
 
 
     public bool _heroIsNear;
-    private bool isMoving = false;
-    private Collider2D currentCollider;
+    protected bool isMoving = false;
+    protected Collider2D currentCollider;
 
     public enum State
     {
@@ -24,14 +23,14 @@ public class SlimeBase : MonoBehaviour, IMovable
         TakeDamage
     };
 
-    private Animator animator;
+    protected Animator animator;
 
 
     private void Awake()
     {
         currentCollider = GetComponent<Collider2D>();
-        state = State.Idle;
-        enemis = GetComponent<EnemisBase>();
+        _state = State.Idle;
+        _enemis = GetComponent<Enemis>();
         animator = GetComponent<Animator>();
     }
 
@@ -43,60 +42,67 @@ public class SlimeBase : MonoBehaviour, IMovable
 
     private void SlimeState()
     {
-        switch (state)
+        switch (_state)
         {
             case State.Idle:
                 isMoving = false;
                 AnimationCotrol();
                 if (_heroIsNear == true)
-                    state = State.RunAway;
-                else if (enemis.takeDamage == true)
-                    state = State.TakeDamage;
+                    _state = State.RunAway;
+                else if (_enemis.takeDamage == true)
+                    _state = State.TakeDamage;
                 break;
 
             case State.RunAway:
                 isMoving = true;
                 if (_heroIsNear == false)
                 {
-                    state = State.Idle;
+                    _state = State.Idle;
                 }
-                else if (enemis.takeDamage == true)
+                else if (_enemis.takeDamage == true)
                 {
-                    state = State.TakeDamage;
+                    _state = State.TakeDamage;
                 }
 
                 AnimationCotrol();
-                Move();
+                SlimeAction();
                 break;
 
             case State.TakeDamage:
-                if (enemis._currentHealth <= 0)
-                    state = State.Idle;
+                if (_enemis._currentHealth <= 0)
+                    _state = State.Idle;
                 currentCollider.enabled = false;
                 isMoving = false;
                 AnimationCotrol();
-                enemis.takeDamage = false;
+                _enemis.takeDamage = false;
 
-                transform.DOShakeScale(0.4f, 0.2f, 0, 3, true, ShakeRandomnessMode.Harmonic).OnComplete(() => SwitchToIdle());
+                transform.DOShakeScale(0.4f, 0.2f, 0, 3, true, ShakeRandomnessMode.Harmonic)
+                    .SetLink(gameObject)
+                    .OnKill(() => SwitchToIdle());
                 break;
         }
 
+    }
+
+    public virtual void SlimeAction()
+    {
+        Move();
     }
 
     private void AnimationCotrol()
     {
         //animator.SetBool("move", _tempoSpeed > 0);
         animator.SetBool("move", isMoving);
-        animator.SetBool("takeDamage", enemis.takeDamage == true);
+        animator.SetBool("takeDamage", _enemis.takeDamage == true);
     }
 
     private void SwitchToIdle()
     {
-        state = State.Idle;
+        _state = State.Idle;
         currentCollider.enabled = true;
     }
-    public void Move()
+    public virtual void Move()
     {
-        transform.Translate((transform.position - _heroPosition.transform.position).normalized * speed * Time.deltaTime);
+        transform.Translate((transform.position - _heroPosition.transform.position).normalized * _speed * Time.deltaTime);
     }
 }

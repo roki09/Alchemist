@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BlueSlimeVisual : MonoBehaviour
 {
-    [SerializeField] private BlueSlimeBase _slime;
+    [SerializeField] private BlueSlime _slime;
 
     private void Awake()
     {
-        _slime = GetComponentInParent<BlueSlimeBase>();
+        _slime = GetComponentInParent<BlueSlime>();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

@@ -7,7 +7,7 @@ using UnityEngine;
 public class HandsMoving : MonoBehaviour
 {
     private float MaxRadius = 2f;
-    [SerializeField] HeroBase heroBase;
+    [SerializeField] MainHero heroBase;
     [SerializeField] Rigidbody2D heroRB;
 
     private Camera cam;
@@ -19,7 +19,7 @@ public class HandsMoving : MonoBehaviour
     {
         cam = FindAnyObjectByType<Camera>();
         weaponRB = GetComponent<Rigidbody2D>();
-        heroBase = GetComponentInParent<HeroBase>();
+        heroBase = GetComponentInParent<MainHero>();
         heroRB = heroBase.GetComponent<Rigidbody2D>();
         directionForRoatete = GetComponentInParent<HeroDirectionReader>();
     }
