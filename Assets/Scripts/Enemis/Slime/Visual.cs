@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Visual : MonoBehaviour
 {
-    //[SerializeField] private Visual _heroDetector;
-    [SerializeField] private SlimeBase _slime;
+    private Enemis _enemis;
+
+    private void Awake()
+    {
+        _enemis = GetComponentInParent<Enemis>();
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _slime._heroIsNear = true;
+            _enemis.heroIsNear = true;
             Debug.Log("hero");
         }
     }
@@ -19,7 +23,7 @@ public class Visual : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _slime._heroIsNear = false;
+            _enemis.heroIsNear = false;
             Debug.Log("hero");
         }
     }

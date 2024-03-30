@@ -8,6 +8,7 @@ public class Enemis : MonoBehaviour
     private SpriteRenderer sprite;
     private ItemDrop drop;
     public bool takeDamage = false;
+    public bool heroIsNear = false;
 
     [SerializeField] private int _maxHealth;
     [SerializeField] public int _currentHealth;

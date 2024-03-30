@@ -12,7 +12,6 @@ public class SlimeBase : MonoBehaviour, IMovable
     [SerializeField] protected State _state;
 
 
-    public bool _heroIsNear;
     protected bool isMoving = false;
     protected Collider2D currentCollider;
 
@@ -47,7 +46,7 @@ public class SlimeBase : MonoBehaviour, IMovable
             case State.Idle:
                 isMoving = false;
                 AnimationCotrol();
-                if (_heroIsNear == true)
+                if (_enemis.heroIsNear == true)
                     _state = State.RunAway;
                 else if (_enemis.takeDamage == true)
                     _state = State.TakeDamage;
@@ -55,7 +54,7 @@ public class SlimeBase : MonoBehaviour, IMovable
 
             case State.RunAway:
                 isMoving = true;
-                if (_heroIsNear == false)
+                if (_enemis.heroIsNear == false)
                 {
                     _state = State.Idle;
                 }
