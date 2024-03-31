@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -9,6 +10,7 @@ public class Projectiles : MonoBehaviour
     [SerializeField] private float _projectailsRange = 3;
     [SerializeField] private MainHero _heroBase;
     [SerializeField] private int _damage = 5;
+    [SerializeField] private TextMeshProUGUI _mainHeroHp;
 
     public bool flies = false;
 
@@ -36,7 +38,7 @@ public class Projectiles : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")) 
         {
-            _heroBase._currentHealth -= _damage;
+            LibraryMethods.MainHeroGetDamage(_damage, _heroBase, _mainHeroHp);
         }
     }
 }

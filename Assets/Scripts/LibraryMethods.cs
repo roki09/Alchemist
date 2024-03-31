@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -15,5 +16,11 @@ public static class LibraryMethods
         else if (chanceDrop > 80 && chanceDrop > 50)
             return 1;
         else return 0;
+    }
+
+    public static void MainHeroGetDamage(int damage, MainHero mainHero, TextMeshProUGUI heroHp)
+    {
+        mainHero._currentHealth -= damage;
+        heroHp.text = $"{mainHero._currentHealth}";
     }
 }
