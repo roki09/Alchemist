@@ -9,7 +9,7 @@ public class InventoryHandler : MonoBehaviour
     public static InventoryHandler Instance;
 
     [SerializeField] SpriteRenderCollection spriteCollection;
-    [SerializeField] List<Item> items = new List<Item>();
+    [SerializeField] public List<Item> items = new List<Item>();
     //[SerializeField] List<Weapon> weapons = new List<Weapon>();
 
     public Transform ItemContent;

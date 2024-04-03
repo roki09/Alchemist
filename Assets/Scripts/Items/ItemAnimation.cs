@@ -85,7 +85,7 @@ public class ItemAnimation : MonoBehaviour
     {
         transform.DOJump(GetRandomPosition(), 0.5f, 3, 3)
             .SetLink(gameObject)
-            .OnKill(() => EnableCollider());
+            .OnComplete(() => EnableCollider());
     }
 
     private void EnableCollider()

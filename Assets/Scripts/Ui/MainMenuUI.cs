@@ -10,6 +10,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void ExitToMain()
     {
+        
         foreach (var item in _canvasGroup)
         {
             if (item.isActiveAndEnabled)
