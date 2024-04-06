@@ -14,6 +14,7 @@ namespace SaveDate
         public int SceneIndex;
         public Vector3 HeroPosition;
         public List<Item> Items;
+        public List<Weapon> Weapons;
     }
 
 }

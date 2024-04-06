@@ -17,23 +17,55 @@ public class SaveLoad : MonoBehaviour
     }
 
     public void Load()
-    { 
+    {
         var date = SaveManager.Load<SaveDate.PlayerPrefsData>(saveKey);
 
         _mainHero.transform.position = date.HeroPosition;
         _inventory.items = date.Items;
+        foreach (var item in date.Weapons)
+        {
+            _inventory.items.Add(item);
+        }
     }
 
     private SaveDate.PlayerPrefsData GetSaveSnapShot()
     {
         var data = new SaveDate.PlayerPrefsData()
         {
+
             HeroPosition = _mainHero.transform.position,
-            Items = _inventory.items,
-            // I need get scene index
             SceneIndex = 1,
+            Items = ItemsList(),
+            Weapons = WeaponsList(),
         };
 
         return data;
-    }   
+    }
+
+    public List<Weapon> WeaponsList()
+    {
+        var list = new List<Weapon>();
+        foreach (var item in _inventory.items)
+        {
+            if (item is Weapon)
+            {
+                list.Add((Weapon)item);
+            }     
+        }
+        return list;
+    }
+
+    public List<Item> ItemsList()
+    {
+        var list = new List<Item>();
+        foreach (var item in _inventory.items)
+        {
+            if (item is Weapon)
+                continue;
+            else
+                list.Add(item);
+        }
+        return list;
+    }
+
 }
