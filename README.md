@@ -31,7 +31,7 @@ ___
 
   In this game I use my own art, I do this for fun.
   ![Items](https://sun9-74.userapi.com/impg/GTz9oCFNDHf6PmJUO09SRia3lsPSlnH8LPH3Hg/Y9cu6mKiZy8.jpg?size=1906x748&quality=96&sign=53335581fdaf345bae14ade4e2f0292f&type=album)
-![alt text](image.png)
+![alt text](d:\Работа\ UnityHub\proba2D oldVer\ForGit\image.png)
 ![alt text](slime.gif)
 
 And more others.
@@ -49,7 +49,7 @@ Implemented here:
     - [BlueSlime](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Enemis/Slime/BlueSlime.cs)
 - Items system ![alt text](5.gif) ![alt text](6.gif)
   - [InventorySystem](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/InventoryHandler.cs)
-    - [Cheast](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ChestLogic.cs)
+    - [Chest](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ChestLogic.cs)
   - [Item](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/Item.cs)
     - [Weapon](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/Weapon.cs)
     - [ItemAnimation](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ItemAnimation.cs)
@@ -69,7 +69,7 @@ Implemented here:
     - [PlayerPrefs](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Save/PlayerPrefsData.cs)
 
     ## More updates in the future
-    - Boss fisgt
+    - Boss fight
     - Craft
     - Shop
     - More items
