@@ -31,23 +31,23 @@ ___
 
   In this game I use my own art, I do this for fun.
   ![Items](https://sun9-74.userapi.com/impg/GTz9oCFNDHf6PmJUO09SRia3lsPSlnH8LPH3Hg/Y9cu6mKiZy8.jpg?size=1906x748&quality=96&sign=53335581fdaf345bae14ade4e2f0292f&type=album)
-![alt text](d:\Работа\ UnityHub\proba2D oldVer\ForGit\image.png)
-![alt text](slime.gif)
+ ![alt text](https://github.com/roki09/Alchemist/blob/main/ForGit/image.png?raw=true)
+ ![alt text](https://github.com/roki09/Alchemist/blob/main/ForGit/slime.gif?raw=true)
 
 And more others.
 
 ___
 
 Implemented here:
-- Base movement ![alt text](2.gif)
+- Base movement ![alt text](https://github.com/roki09/Alchemist/blob/main/ForGit/2.gif?raw=true)
   - [Movement](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/MainHero/HeroDirectionReader.cs) 
-- Battle system ![alt text](4.gif)
+- Battle system ![alt text](https://github.com/roki09/Alchemist/blob/main/ForGit/4.gif?raw=true)
   - [WeaponMoving](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/MainHero/Hands/HandsMoving.cs)
   - [Damage](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/WeaponTrigger.cs)
   - [Enemis](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Enemis/Enemis.cs)
     - [Slime](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Enemis/Slime/SlimeBase.cs)
     - [BlueSlime](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Enemis/Slime/BlueSlime.cs)
-- Items system ![alt text](5.gif) ![alt text](6.gif)
+- Items system ![alt text](https://github.com/roki09/Alchemist/blob/main/ForGit/5.gif?raw=true) ![alt text](https://github.com/roki09/Alchemist/blob/main/ForGit/6.gif?raw=true)
   - [InventorySystem](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/InventoryHandler.cs)
     - [Chest](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ChestLogic.cs)
   - [Item](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/Item.cs)
