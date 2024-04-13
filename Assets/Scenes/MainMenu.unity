@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2c60e1fbeb1c94baff363439b6e306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 1
+  scene: 2
 --- !u!95 &844369034
 Animator:
   serializedVersion: 5
@@ -1692,6 +1692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfbe83ca72218741af41b3e2186acf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainHero: {fileID: 0}
+  _inventory: {fileID: 0}
 --- !u!1 &1130249388
 GameObject:
   m_ObjectHideFlags: 0
