@@ -60,8 +60,8 @@ public class InventoryHandler : MonoBehaviour
                 var rarytiSprite = obj.GetComponent<Image>();
                 var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
 
-                rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
-                itemIcon.sprite = spriteCollection.spritesOfWeaponForInventory[item._index];
+                rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item.rarity];
+                itemIcon.sprite = spriteCollection.spritesOfWeaponForInventory[item.index];
             }
             else
             {
@@ -74,8 +74,8 @@ public class InventoryHandler : MonoBehaviour
                 var rarytiSprite = obj.GetComponent<Image>();
                 var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
 
-                rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
-                itemIcon.sprite = spriteCollection.sprites[item._index];
+                rarytiSprite.sprite = spriteCollection.spritesOfRarytiBackground[item.rarity];
+                itemIcon.sprite = spriteCollection.sprites[item.index];
             }
 
         }

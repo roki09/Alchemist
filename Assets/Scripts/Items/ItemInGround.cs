@@ -23,7 +23,7 @@ public class ItemInGround : MonoBehaviour
     {
         var item = _pickUp.GetItem();
         item = _currentItem;
-        _sprite.sprite = _sripteCollection.sprites[_currentItem._index];
+        _sprite.sprite = _sripteCollection.sprites[_currentItem.index];
     }
 
 }

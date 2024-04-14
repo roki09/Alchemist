@@ -76,12 +76,12 @@ public class ChestLogic : MonoBehaviour, IInteractable
             var rarytiSprite = obj.GetComponent<Image>();
             var itemIcon = obj.transform.Find("ImageOfItem").GetComponent<Image>();
 
-            rarytiSprite.sprite = _spriteCollection.spritesOfRarytiBackground[item._rarity];
+            rarytiSprite.sprite = _spriteCollection.spritesOfRarytiBackground[item.rarity];
 
             if (item is Weapon)
-                itemIcon.sprite = _spriteCollection.spritesOfWeaponForInventory[item._index];
+                itemIcon.sprite = _spriteCollection.spritesOfWeaponForInventory[item.index];
             else
-                itemIcon.sprite = _spriteCollection.sprites[item._index];
+                itemIcon.sprite = _spriteCollection.sprites[item.index];
         }
     }
 

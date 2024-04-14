@@ -15,20 +15,20 @@ public class Weapon : Item
         else
             _damage = damage;
 
-        _index = index;
-        _name = LibraryItemsNaims.WeaponsName[index];
-        _rarity = raryti;
+        base.index = index;
+        base.name = LibraryItemsNaims.WeaponsName[index];
+        rarity = raryti;
         if (raryti == 0)
-            _cost = cost * 1;
+            base.cost = cost * 1;
         else
-            _cost = cost * raryti;
+            base.cost = cost * raryti;
     }
 
     public override string ShowStats()
     {
-        return $"Name: {LibraryItemsNaims.WeaponsName[_index]}\n" +
-            $"Rarity: {LibraryItemsNaims.RarytiName[_rarity]}\n" +
-            $"Cost: {_cost}\n" +
+        return $"Name: {LibraryItemsNaims.WeaponsName[index]}\n" +
+            $"Rarity: {LibraryItemsNaims.RarytiName[rarity]}\n" +
+            $"Cost: {cost}\n" +
             $"Damage: {_damage}";
     }
 }

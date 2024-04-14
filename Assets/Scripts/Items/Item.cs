@@ -11,28 +11,28 @@ using UnityEngine.UI;
 public class Item
 {
 
-    public int _index;
-    public string _name;
-    public int _rarity;
-    public int _cost;
+    public int index;
+    public string name;
+    public int rarity;
+    public int cost;
 
     public Item(int index, string name, int raryti, int cost)
     {
-        _index = index;
-        _name = LibraryItemsNaims.ItemsName[index];
-        _rarity = raryti;
+        this.index = index;
+        this.name = LibraryItemsNaims.ItemsName[index];
+        rarity = raryti;
         if (raryti == 0)
-            _cost = cost * 1;
+            this.cost = cost * 1;
         else
-            _cost = cost * raryti;
+            this.cost = cost * raryti;
     }
 
 
     public virtual string ShowStats()
     {
-        return $"Name: {LibraryItemsNaims.ItemsName[_index]}\n" +
-            $"Rarity: {LibraryItemsNaims.RarytiName[_rarity]}\n" +
-            $"Cost: {_cost}";
+        return $"Name: {LibraryItemsNaims.ItemsName[index]}\n" +
+            $"Rarity: {LibraryItemsNaims.RarytiName[rarity]}\n" +
+            $"Cost: {cost}";
     }
 
 }

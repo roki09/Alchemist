@@ -29,7 +29,7 @@ public class WeaponImageInteract : MonoBehaviour, IPointerEnterHandler, IPointer
         {
             Destroy(child.gameObject);
         }
-        var hand = Instantiate(spriteCollection.weaponsPrefab[currentItem._index], heroBase.transform);
+        var hand = Instantiate(spriteCollection.weaponsPrefab[currentItem.index], heroBase.transform);
         var item = hand.GetComponent<HandsBase>();
         item.equippedItem = currentItem;
     }

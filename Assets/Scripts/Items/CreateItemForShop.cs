@@ -54,8 +54,8 @@ public class CreateItemForShop : MonoBehaviour
             var spriteItem = image.transform.Find("ImageOfItem").GetComponent<Image>();
 
             itemInImage.currentItem = item; 
-            rarytiItem.sprite = spriteCollection.spritesOfRarytiBackground[item._rarity];
-            spriteItem.sprite = spriteCollection.sprites[item._index];
+            rarytiItem.sprite = spriteCollection.spritesOfRarytiBackground[item.rarity];
+            spriteItem.sprite = spriteCollection.sprites[item.index];
 
         }
     }

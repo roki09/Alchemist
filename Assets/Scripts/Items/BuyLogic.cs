@@ -27,9 +27,9 @@ public class BuyLogic : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler
 
     private void BoyItem()
     {
-        if (currentItem._cost < PlayersMoney.moneyCount)
+        if (currentItem.cost < PlayersMoney.moneyCount)
         {
-            PlayersMoney.moneyCount -= currentItem._cost;
+            PlayersMoney.moneyCount -= currentItem.cost;
             InventoryHandler.Instance.AddItem(currentItem);
             Destroy(gameObject);
             moneyScore.SetScore();
