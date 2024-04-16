@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Formula : MonoBehaviour
 {
     [SerializeField] SpriteRenderCollection spriteCollection;
-    [SerializeField] private Image[] images;
+    [SerializeField] private Image[] images = new Image[3];
+
     [SerializeField] private Image craftedItemReferense;
 
     public string formulaName;
-    private Item craftedItem;
+    public Item craftedItem;
 
     public Item
         ingredient1,
@@ -18,16 +19,13 @@ public class Formula : MonoBehaviour
         ingredient3;
 
     public bool
-        itemExist1,
-        itemExist2,
-        itemExist3;
+        itemExist;
 
 
 
     private List<Item> FindIngredient()
     {
         Item[] itemsArray = new Item[3] { ingredient1, ingredient2, ingredient3 };
-        bool[] boolsArray = new bool[3] { itemExist1, itemExist2, itemExist3 };
         List<Item> listOfItem = new List<Item>();
 
         var itemsList = InventoryHandler.Instance.items;
@@ -39,23 +37,24 @@ public class Formula : MonoBehaviour
                 if (item.name == itemsArray[i].name)
                 {
                     listOfItem.Add(item);
-                    boolsArray[i] = true;
+                    InventoryHandler.Instance.items.Remove(item);
+                    break;
                 }
             }
         }
+        if (listOfItem.Count == 3)
+            itemExist = true;
         return listOfItem;
     }
 
     public void CraftItem()
     {
         var listOfItem = FindIngredient();
-        var weHaveAllIngredients = CheckBool();
-        if (weHaveAllIngredients == true)
-        {
+        if (itemExist == true)
             InventoryHandler.Instance.AddItem(craftedItem);
-            ChangeInventory(listOfItem);
-        }
-            
+        else
+            InventoryHandler.Instance.AddItem(new Item(4, "CursedPot", 0, 1));
+        itemExist = false;
     }
 
     public void ChangeImage()
@@ -68,17 +67,6 @@ public class Formula : MonoBehaviour
         }
     }
 
-
-    private bool CheckBool()
-    {
-        bool[] boolsArray = new bool[3] { itemExist1, itemExist2, itemExist3 };
-        foreach (var item in boolsArray)
-        {
-            if(item == false)
-                return false;
-        }
-        return true;
-    }
 
     private void ChangeInventory(List<Item> listOfItem)
     {

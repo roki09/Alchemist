@@ -10,6 +10,20 @@ public class SaveLoad : MonoBehaviour
 
     private const string saveKey = "mainSave";
 
+    public void AutoSave()
+    {
+        SaveManager.Save(saveKey, GetSaveSnapShotAutoSave());
+    }
+
+    public void LoadAutoSave()
+    {
+        var date = SaveManager.Load<SaveDate.PlayerPrefsData>(saveKey);
+        _inventory.items = date.Items;
+        foreach (var item in date.Weapons)
+        {
+            _inventory.items.Add(item);
+        }
+    }
 
     public void Save()
     {
@@ -26,6 +40,16 @@ public class SaveLoad : MonoBehaviour
         {
             _inventory.items.Add(item);
         }
+    }
+
+    private SaveDate.PlayerPrefsData GetSaveSnapShotAutoSave()
+    {
+        var data = new SaveDate.PlayerPrefsData()
+        {
+            Items = ItemsList(),
+            Weapons = WeaponsList(),
+        };
+        return data;
     }
 
     private SaveDate.PlayerPrefsData GetSaveSnapShot()
@@ -50,7 +74,7 @@ public class SaveLoad : MonoBehaviour
             if (item is Weapon)
             {
                 list.Add((Weapon)item);
-            }     
+            }
         }
         return list;
     }

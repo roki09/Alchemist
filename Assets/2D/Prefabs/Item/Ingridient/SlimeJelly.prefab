@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentItem:
-    _index: 18
-    _name: SlimeJelly
-    _rarity: 0
-    _cost: 10
+    index: 6
+    name: SlimeJelly
+    rarity: 0
+    cost: 10
 --- !u!58 &6498736656485764359
 CircleCollider2D:
   m_ObjectHideFlags: 0
