@@ -14,16 +14,16 @@ ___
   - [X] Сombat system
   - [X] Inventory system
   - [X] Items 
-  - [ ] Game art
-  - [ ] Craft system
-  - [ ] In game shop
+  - [X] Game art
+  - [X] Craft system
+  - [X] In game shop
 - [ ] Side goals
   - [X] Advertising (test version)
-  - [ ] Ui
+  - [X] Ui
     - [X] Main menu
     - [X] Pause menu
-    - [ ] Shop menu
-    - [ ] Craft menu
+    - [X] Shop menu
+    - [X] Craft menu
   - [ ] Audio
   - [ ] Particle system
 
@@ -55,6 +55,10 @@ Implemented here:
     - [ItemAnimation](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ItemAnimation.cs)
     - [ItemPickUp](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ItemPickUp.cs), [ItemDrop](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Enemis/ItemDrop.cs)
     - [ItemShowStats](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ItemShowStats.cs)
+- Shop and craft system ![alt text](craft.gif)
+  - [Craft](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/Formula.cs)
+  - [Shop](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ShopHandler.cs)
+    - [ButtonLogic](https://github.com/roki09/Alchemist/blob/main/Assets/Scripts/Items/ShopButtonLogic.cs)
     
 **All items have rarity,and  are randomly generated in chests with different characteristics.**
 
@@ -70,8 +74,6 @@ Implemented here:
 
     ## More updates in the future
     - Boss fight
-    - Craft
-    - Shop
     - More items
     - Particle
     - Game statistic
