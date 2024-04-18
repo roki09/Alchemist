@@ -27,6 +27,11 @@ public class InventoryHandler : MonoBehaviour
         items.Add(item);
     }
 
+    public void AddFormula(Formula formula)
+    {
+        formulas.Add(formula);
+    }
+
     //public void AddWeapon(Weapon weapon)
     //{
     //    weapons.Add(weapon);

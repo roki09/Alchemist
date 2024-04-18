@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
 public class Formula : MonoBehaviour
 {
     [SerializeField] SpriteRenderCollection spriteCollection;
@@ -20,6 +22,8 @@ public class Formula : MonoBehaviour
 
     public bool
         itemExist;
+
+    public int cost;
 
 
 
